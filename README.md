@@ -37,6 +37,13 @@ Features:
 
 静态资源（如图片）可以放在 `public/` 目录下。
 
+## 发布元数据
+
+生产站点地址在 `astro.config.mjs` 的 `site` 中配置为 `https://npulug.org`。
+Canonical、Open Graph、Twitter、Sitemap 和 RSS 均使用此地址，不使用本地预览服务器的地址。
+默认分享图片复用 `public/favicon.png`；PNG 图标声明为 `image/png`。
+
+
 ## 🧞 命令
 
 所有命令都在项目根目录下运行：
