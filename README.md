@@ -42,6 +42,7 @@ Features:
 生产站点地址在 `astro.config.mjs` 的 `site` 中配置为 `https://npulug.org`。
 Canonical、Open Graph、Twitter、Sitemap 和 RSS 均使用此地址，不使用本地预览服务器的地址。
 默认分享图片复用 `public/favicon.png`；PNG 图标声明为 `image/png`。
+RSS 按 `pubDate` 倒序排列；文章链接与页面路由保持一致，优先使用 frontmatter 的 `slug`，未填写时使用移除扩展名后的内容 ID。
 
 
 ## 🧞 命令
