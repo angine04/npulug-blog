@@ -1,7 +1,7 @@
 ---
 title: 为rEFInd启用Secure Boot
 pubDate: 2023-05-26
-updateDate: 2024-04-04
+updatedDate: 2024-04-04
 slug: refind-secure-boot
 authors:
   - name: Angine

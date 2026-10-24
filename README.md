@@ -33,7 +33,7 @@ Features:
 └── tsconfig.json
 ```
 
-博客文章存放在 `src/content/blog/` 目录中。每篇文章的元数据 (frontmatter) 在 `src/content/config.ts` 中定义。
+博客文章存放在 `src/content/blog/` 目录中。每篇文章的元数据 (frontmatter) 在 `src/content.config.ts` 中定义。
 
 静态资源（如图片）可以放在 `public/` 目录下。
 
@@ -43,6 +43,8 @@ Features:
 Canonical、Open Graph、Twitter、Sitemap 和 RSS 均使用此地址，不使用本地预览服务器的地址。
 默认分享图片复用 `public/favicon.png`；PNG 图标声明为 `image/png`。
 RSS 按 `pubDate` 倒序排列；文章链接与页面路由保持一致，优先使用 frontmatter 的 `slug`，未填写时使用移除扩展名后的内容 ID。
+文章使用 `pubDate` 表示发布日期，可选的 `updatedDate` 表示更新日期；两者仅作为 Open Graph 时间元数据输出，不改变页面上的日期展示。
+可选的 `heroImage` 用作 Open Graph 和 Twitter 分享图片，未填写时使用默认图片。
 
 
 ## 🧞 命令
