@@ -1,7 +1,7 @@
 ---
 title: 简记为Linux重建grub启动引导的步骤
 pubDate: 2025-03-03
-updateDate: 2025-03-03
+updatedDate: 2025-03-03
 slug: rebuild-grub2-for-linux
 authors:
   - name: SZTK

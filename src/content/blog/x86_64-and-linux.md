@@ -1,7 +1,7 @@
 ---
 title: 认识x86_64与Linux哲学
 pubDate: 2026-08-18
-updateDate: 2026-08-18
+updatedDate: 2026-08-18
 slug: x86_64-and-linux
 authors:
   - name: Yuri

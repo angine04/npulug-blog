@@ -13,17 +13,19 @@ interface Props {
   title: string;
   description?: string;
   pubDate?: Date;
+  updatedDate?: Date;
+  image?: string;
   authors?: Author[];
   originalTitle?: string;
   originalUrl?: string;
 }
 
 // Assert Astro.props to the defined type
-const { title, description, pubDate, authors, originalTitle, originalUrl } =
+const { title, description, pubDate, updatedDate, image, authors, originalTitle, originalUrl } =
   Astro.props as Props;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} pubDate={pubDate} updatedDate={updatedDate} image={image}>
   <main>
     <div class="back-link">
       <a href="/blog" aria-label="返回博客" title="返回博客">&larr;</a>
