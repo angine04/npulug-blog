@@ -216,7 +216,8 @@ footer {
   margin: 5vh 0;
   height: 48px;
 }
-.back-link a {
+.back-link a,
+.back-to-top {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -234,7 +235,8 @@ footer {
   line-height: 1;
   box-sizing: border-box;
 }
-.back-link a:hover {
+.back-link a:hover,
+.back-to-top:hover {
   color: var(--color-primary);
   background-color: var(--color-footer-bg);
   border-color: var(--color-primary);
