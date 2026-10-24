@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import BackToTop from "../components/BackToTop.astro";
 
 // Define Author type matching the schema
 type Author = {
@@ -26,7 +27,7 @@ const { title, description, pubDate, updatedDate, image, authors, originalTitle,
 ---
 
 <BaseLayout title={title} description={description} pubDate={pubDate} updatedDate={updatedDate} image={image}>
-  <main>
+  <main id="top" tabindex="-1">
     <div class="back-link">
       <a href="/blog" aria-label="返回博客" title="返回博客">&larr;</a>
     </div>
@@ -79,6 +80,7 @@ const { title, description, pubDate, updatedDate, image, authors, originalTitle,
       <slot />
     </article>
   </main>
+  <BackToTop />
 </BaseLayout>
 <style>
   article {

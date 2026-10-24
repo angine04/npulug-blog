@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import BackToTop from "../components/BackToTop.astro";
 // import Header from "../components/Header.astro"; // Remove Header import
 
 const { title, description } = Astro.props;
@@ -7,11 +8,12 @@ const { title, description } = Astro.props;
 
 <BaseLayout title={title} description={description}>
   {/* <Header /> Remove Header usage */}
-  <main>
+  <main id="top" tabindex="-1">
     {/* Add back button similar to PostLayout, but linking to home */}
     <div class="back-link">
       <a href="/" aria-label="返回首页" title="返回首页">&larr;</a>
     </div>
     <slot />
   </main>
+  <BackToTop />
 </BaseLayout>
