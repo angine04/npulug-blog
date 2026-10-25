@@ -53,13 +53,9 @@
   }
 
   /* 深色背景上 tux 的黑色躯体几乎与底色同色，用一圈细描边把轮廓找回来，
-     而不是反转配色——反转后就不是 tux 了。 */
-  :global([data-theme="dark"]) .site-logo {
-    --logo-rim: #8a93a6;
-  }
-
+     而不是反转配色——反转后就不是 tux 了。描边取正文色，与字标同重。 */
   :global([data-theme="dark"]) .site-logo .logo-body {
-    stroke: var(--logo-rim);
+    stroke: var(--color-text);
     stroke-width: 4;
     stroke-linejoin: round;
   }
