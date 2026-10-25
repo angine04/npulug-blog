@@ -49,35 +49,35 @@
 }
 
 /*
-  深色主题：由 <html data-theme="dark"> 触发。
-  data-theme 由 BaseHead 里的内联脚本在首屏渲染前写入，
-  因此这里不需要 prefers-color-scheme 媒体查询。
+  深色主题：跟随系统偏好。
  */
-:root[data-theme="dark"] {
-  color-scheme: dark;
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
 
-  --color-text: #dde1e8;
-  --color-background: #12151c;
-  --color-primary: #58a6ff;
-  --color-primary-contrast: #0b0e13;
-  --color-secondary: #9aa5b8;
-  --color-accent: #ffc107;
-  --color-border: #2b3240;
-  --color-footer-bg: #171b24;
-  --color-footer-text: #9aa5b8;
-  --color-shadow: rgba(0, 0, 0, 0.5);
+    --color-text: #dde1e8;
+    --color-background: #12151c;
+    --color-primary: #58a6ff;
+    --color-primary-contrast: #0b0e13;
+    --color-secondary: #9aa5b8;
+    --color-accent: #ffc107;
+    --color-border: #2b3240;
+    --color-footer-bg: #171b24;
+    --color-footer-text: #9aa5b8;
+    --color-shadow: rgba(0, 0, 0, 0.5);
 
-  /* 正文链接色：浅色主题用的 #08519f 在深色背景上几乎不可读 */
-  --accent: #7cc0ff;
-  --accent-dark: #a6d4ff;
+    /* 正文链接色：浅色主题用的 #08519f 在深色背景上几乎不可读 */
+    --accent: #7cc0ff;
+    --accent-dark: #a6d4ff;
 
-  /* --black 作为标题颜色使用：rgb(var(--black)) */
-  --black: 226, 231, 240;
-  /* --gray-light 作为代码底色与分隔线：rgb(var(--gray-light)) */
-  --gray-light: 43, 50, 64;
-  --gray-gradient: rgba(var(--gray), 12%), var(--color-background);
-  --box-shadow: 0 2px 6px rgba(0, 0, 0, 45%), 0 8px 24px rgba(0, 0, 0, 55%),
-    0 16px 32px rgba(0, 0, 0, 55%);
+    /* --black 作为标题颜色使用：rgb(var(--black)) */
+    --black: 226, 231, 240;
+    /* --gray-light 作为代码底色与分隔线：rgb(var(--gray-light)) */
+    --gray-light: 43, 50, 64;
+    --gray-gradient: rgba(var(--gray), 12%), var(--color-background);
+    --box-shadow: 0 2px 6px rgba(0, 0, 0, 45%), 0 8px 24px rgba(0, 0, 0, 55%),
+      0 16px 32px rgba(0, 0, 0, 55%);
+  }
 }
 body {
   font-family: var(--font-family-sans), var(--font-family-cjk);
@@ -289,13 +289,15 @@ footer {
 
 /*
   Shiki 双主题：astro.config.mjs 同时输出 github-light / github-dark，
-  每个 token 带 --shiki-light / --shiki-dark 变量，深色主题下整体切换到后者。
+  每个 token 带 --shiki-light / --shiki-dark 变量，深色偏好下整体切换到后者。
  */
-:root[data-theme="dark"] .astro-code,
-:root[data-theme="dark"] .astro-code span {
-  color: var(--shiki-dark) !important;
-  background-color: var(--shiki-dark-bg) !important;
-  font-style: var(--shiki-dark-font-style) !important;
-  font-weight: var(--shiki-dark-font-weight) !important;
-  text-decoration: var(--shiki-dark-text-decoration) !important;
+@media (prefers-color-scheme: dark) {
+  .astro-code,
+  .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+  }
 }
