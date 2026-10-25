@@ -1,6 +1,7 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
 import "katex/dist/katex.min.css";
 import "../styles/global.css"; // 引入全局样式
 import { ClientRouter } from "astro:transitions"; // Use the current recommended name based on deprecation message
@@ -8,13 +9,14 @@ import { ClientRouter } from "astro:transitions"; // Use the current recommended
 const { title, description, pubDate, updatedDate, image } = Astro.props;
 ---
 
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
   <head>
     <BaseHead title={title} description={description} pubDate={pubDate} updatedDate={updatedDate} image={image} />
     <ClientRouter />
   </head>
   <body>
     <slot />
+    <ThemeToggle />
     <Footer />
   </body>
 </html>
