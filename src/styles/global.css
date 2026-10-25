@@ -281,3 +281,16 @@ footer {
   background-color: var(--color-footer-bg);
   border-color: var(--color-primary);
 }
+
+/*
+  Shiki 双主题：astro.config.mjs 同时输出 github-light / github-dark，
+  每个 token 带 --shiki-light / --shiki-dark 变量，深色主题下整体切换到后者。
+ */
+:root[data-theme="dark"] .astro-code,
+:root[data-theme="dark"] .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
