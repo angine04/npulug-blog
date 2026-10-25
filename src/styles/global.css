@@ -67,6 +67,10 @@
   --color-footer-text: #9aa5b8;
   --color-shadow: rgba(0, 0, 0, 0.5);
 
+  /* 正文链接色：浅色主题用的 #08519f 在深色背景上几乎不可读 */
+  --accent: #7cc0ff;
+  --accent-dark: #a6d4ff;
+
   /* --black 作为标题颜色使用：rgb(var(--black)) */
   --black: 226, 231, 240;
   /* --gray-light 作为代码底色与分隔线：rgb(var(--gray-light)) */
