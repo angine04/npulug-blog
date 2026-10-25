@@ -5,6 +5,8 @@
  */
 
 :root {
+  color-scheme: light;
+
   --font-family-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
@@ -16,11 +18,13 @@
   --color-text: #333;
   --color-background: #fff;
   --color-primary: #007bff;
+  --color-primary-contrast: #fff;
   --color-secondary: #6c757d;
   --color-accent: #ffc107;
   --color-border: #eee;
   --color-footer-bg: #f8f9fa;
   --color-footer-text: #6c757d;
+  --color-shadow: rgba(0, 0, 0, 0.08);
 
   --spacing-xs: 0.25rem;
   --spacing-sm: 0.5rem;
@@ -39,9 +43,37 @@
   --gray: 96, 115, 159;
   --gray-light: 229, 233, 240;
   --gray-dark: 34, 41, 57;
-  --gray-gradient: rgba(var(--gray-light), 50%), #fff;
+  --gray-gradient: rgba(var(--gray-light), 50%), var(--color-background);
   --box-shadow: 0 2px 6px rgba(var(--gray), 25%),
     0 8px 24px rgba(var(--gray), 33%), 0 16px 32px rgba(var(--gray), 33%);
+}
+
+/*
+  深色主题：由 <html data-theme="dark"> 触发。
+  data-theme 由 BaseHead 里的内联脚本在首屏渲染前写入，
+  因此这里不需要 prefers-color-scheme 媒体查询。
+ */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-text: #dde1e8;
+  --color-background: #12151c;
+  --color-primary: #58a6ff;
+  --color-primary-contrast: #0b0e13;
+  --color-secondary: #9aa5b8;
+  --color-accent: #ffc107;
+  --color-border: #2b3240;
+  --color-footer-bg: #171b24;
+  --color-footer-text: #9aa5b8;
+  --color-shadow: rgba(0, 0, 0, 0.5);
+
+  /* --black 作为标题颜色使用：rgb(var(--black)) */
+  --black: 226, 231, 240;
+  /* --gray-light 作为代码底色与分隔线：rgb(var(--gray-light)) */
+  --gray-light: 43, 50, 64;
+  --gray-gradient: rgba(var(--gray), 12%), var(--color-background);
+  --box-shadow: 0 2px 6px rgba(0, 0, 0, 45%), 0 8px 24px rgba(0, 0, 0, 55%),
+    0 16px 32px rgba(0, 0, 0, 55%);
 }
 body {
   font-family: var(--font-family-sans), var(--font-family-cjk);
@@ -59,6 +91,13 @@ body {
   overflow-wrap: break-word;
   font-size: 20px;
   line-height: 1.7;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
 }
 main {
   flex-grow: 1;
